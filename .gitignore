@@ -1,0 +1,6 @@
+.Apple*
+.DS_Store
+megahal*
+timestamp.txt
+last_reply.txt
+config.yml
