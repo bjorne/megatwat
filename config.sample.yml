@@ -1,5 +1,4 @@
-config:
-  username: twat
-  password: twot
-  timestamp_file: timestamp.txt
-  interval: 60
+:username: twat
+:password: twot
+:timestamp_file: timestamp.txt
+:interval: 60
