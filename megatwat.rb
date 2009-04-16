@@ -48,9 +48,8 @@ while true
     puts ">> Answering reply by #{tweet.user.screen_name}: #{tweet.text}."
     
     # tell megahal about the text
-    puts ">> debug: response text: '" + tweet.text.gsub(/\@#{@config['username']}/, '') + "\n\n" + "'"
-    io.write(tweet.text.gsub(/^\@#{@config['username']} /, '') + "\n\n")
-    # get response and reply
+    io.write(tweet.text.gsub(/\@#{@config['username']}/, '') + "\n\n") # needs double newlines!
+    # get response and reply with it
     reply = io.gets
     File.open('last_reply.txt', 'w') {|f| f.write(reply) }
     retweet = base.update("@#{tweet.user.name} #{Iconv.iconv('ISO-8859-1//IGNORE//TRANSLIT', 'UTF-8', reply)}", { :in_reply_to_status_id => tweet.id })
